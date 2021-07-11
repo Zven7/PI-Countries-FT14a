@@ -1,6 +1,12 @@
-#countryCardsContainer{
-    margin: 0px 150px 0px 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#countryCardsContainer {
+  margin: 0px 150px 0px 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 1318px) {
+  #countryCardsContainer {
+    justify-content: center;
+  }
 }

@@ -1,16 +1,22 @@
-import ButtonFO from './ButtonFO/ButtonFO.js';
+import SortAlpha from './ButtonFO/SortAlpha.js';
+import SortPopulation from './ButtonFO/SortPopulation.js';
+import FilterBy from './ButtonFO/FilterBy.js';
 import CreateAct from './CreateAct/CreateAct.js';
 import SearchBar from './SearchBar/SearchBar.js';
+import { Link } from "react-router-dom";
 import React from 'react';
 import './NavBar.css';
 
 export default function NavBar() {
     return (
         <div id='wrapper'>
-            <ButtonFO name='Filter'></ButtonFO>
-            <ButtonFO name='Order'></ButtonFO>
-            <SearchBar></SearchBar>
-            <CreateAct></CreateAct>
+            <div id='filterWrapper'>
+                <SortAlpha />
+                <FilterBy />
+                <SortPopulation />
+            </div>
+            <SearchBar />
+            <CreateAct />
         </div>
     )
 }

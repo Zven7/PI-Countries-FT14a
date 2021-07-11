@@ -1,9 +1,13 @@
 import './CreateAct.css'
+import { Link } from 'react-router-dom'
 
 export default function CreateAct() {
     return (
-        <button id='actButton' type='button'>
-            <a href="#">Create Activity</a>
-        </button>
+        <Link id='actButtonFF' to='/activity'>
+            <button id='actButton' type='button'>
+                Create Activity
+            </button>
+        </Link>
     )
 }
+

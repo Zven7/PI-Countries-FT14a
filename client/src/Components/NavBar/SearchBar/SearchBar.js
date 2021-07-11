@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getCountryQuery } from '../../../Redux/actions'
+import { Link } from 'react-router-dom';
+import { FaSearch } from "react-icons/fa";
 import './SearchBar.css'
 
 export default function SearchBar() {
     const dispatch = useDispatch();
-    const countriesFromDb = useSelector(state => state.queryCountriesList)
+    const countriesFromDb = useSelector(state => state.queryCountryList)
 
     const [input, setInput] = useState({
         word: ''
@@ -21,22 +23,24 @@ export default function SearchBar() {
         e.preventDefault();
 
         dispatch(getCountryQuery(input.word))
+        
         setInput({
             word: ''
         })
     }
 
-    return (
-        <>
-            <form>
-                <input
-                    type='search'
-                    placeholder='Search countries here...'
-                    onChange={handleChange}
+    let queryParam = input.word;
 
-                />
-                <button id='sendButton' type='submit' onSubmit={(e) => handleSubmit(e)}>GO!</button>
-            </form>
-        </>
+    return (
+        <form id='searchForm' onSubmit={(e) => handleSubmit(e)}>
+            <input
+                type='search'
+                placeholder='Search countries here...'
+                onChange={handleChange}
+                id='searchBarFF'
+            />
+            <button id='sendButton' type='submit' ><Link to={queryParam.length > 0? `/search/${queryParam}`: '/home'}>
+                <FaSearch id='searchIcon' /></Link></button>
+        </form>
     )
 }

@@ -35,9 +35,21 @@ export const getOneCountry = (id) => {
     }
 }
 
+/* export const postActivity = (payload) => {
+    axios.post('https://localhost:3001/activity', payload)
+        .then(data => {
+            return (dispatch) => {
+                dispatch({
+                    type: CREATE_ACTIVITY,
+                    payload: data
+                })
+            }
+        })
+        .catch(err => console.log(err))
+} */
+
 export const postActivity = (payload) => {
-    return {
-        type: CREATE_ACTIVITY,
-        payload
-    }
+    return (dispatch) => {
+        axios.post("http://localhost:3001/activity", payload)
+    };
 }

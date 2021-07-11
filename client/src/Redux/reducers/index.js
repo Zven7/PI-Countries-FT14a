@@ -31,10 +31,10 @@ function rootReducer(state = initialState, action) {
                 queryCountryList: payload
             };
         case CREATE_ACTIVITY:
-            axios.post('https://localhost:3001/activity', payload)
+            console.log('POST Payload', payload)
             return {
                 ...state,
-                successMsg: 'Activity Added!'
+                activitiesList: payload
             }
         default:
             return state;

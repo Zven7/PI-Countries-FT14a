@@ -1,0 +1,9 @@
+#errorMsgQuery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#goBackButton a{
+    color: white;
+}

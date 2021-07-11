@@ -1,0 +1,20 @@
+#headerContainer {
+  display: flex;
+  justify-content: left;
+  background-color: black;
+}
+
+#headerText a {
+  color: white;
+  margin-left: 50px;
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  #headerContainer {
+    justify-content: center;
+  }
+  #headerContainer a {
+    margin-left: 0;
+  }
+}

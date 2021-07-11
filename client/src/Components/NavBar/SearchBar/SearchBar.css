@@ -1,27 +1,39 @@
-input{
-    border-radius: 3px;
-    border: 0px;
-    padding: 3px;
-    margin: 2px;
+#searchBarFF {
+  margin: 10px;
+  margin-top: 0px;
+  margin-right: 0px;
+  padding: 15px;
+  width: 30em;
+  text-align: left;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  outline: none;
 }
 
-input {background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}
-input {
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    display: block;
+#sendButton {
+  background-color: transparent;
+  border: 0px;
+  position: relative;
+  top: -45px;
+  right: -120px;
 }
 
-input:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
+#searchIcon:hover {
+  color: black;
 }
 
+#searchForm {
+  width: 30em;
+  height: 50px;
+  margin-right: 0px !important;
+}
+
+@media (max-width: 1538px) {
+  #searchForm #searchBarFF {
+    margin-left: 40px;
+  }
+}

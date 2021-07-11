@@ -1,24 +1,30 @@
-#actButton {background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}
 #actButton {
     margin: 10px;
-    padding: 15px 45px;
+    padding: 15px 35px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px #eee;
+    width: 200px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);            
+    box-shadow: 0 0 0px #eee;
     border-radius: 10px;
     display: block;
+    cursor: pointer;
+    border: 0.001px rgb(255, 255, 255) thin;
 }
 
 #actButton:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-color: black;
     color: #fff;
     text-decoration: none;
 }
 
 a{
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
+}
+
+a:hover{
+    color: rgb(255, 255, 255);
 }

@@ -1,21 +1,22 @@
-select {background-image: linear-gradient(to right, #fffc00 0%, #ffffff  51%, #fffc00  100%)}
+
 select {
     margin: 10px;
     padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
-    background-size: 200% auto;
-    color: black;            
+    background-color: black;
+    color: rgb(255, 255, 255);            
     box-shadow: 0 0 20px #eee;
-    border: 0px;
+    border: 0.01px black thin;
     border-radius: 10px;
     display: block;
-  }
+    outline: none;
+}
 
 select:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: black;
+
+    background-color: azure;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-  }
- 
+}
