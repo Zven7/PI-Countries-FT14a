@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Route, useParams, Redirect } from "react-router-dom";
 import { getOneCountry } from "../../Redux/actions";
 import ActivityCard from "./ActivityCard";
 import CreateAct from '../../Components/NavBar/CreateAct/CreateAct'
 import { FaLongArrowAltDown } from 'react-icons/fa'
 import './CountryDetails.css'
 import { Link } from "react-router-dom";
+import IncorrectPage from "../IncorrectPage/IncorrectPage";
 
 const CountryDetails = (props) => {
     const dispatch = useDispatch();
@@ -23,9 +24,9 @@ const CountryDetails = (props) => {
 
     if(ctDet === null){
         return (
-            <div>
-                <h1>Incorrect</h1>
-            </div>
+            <Route>
+                <Redirect to='/incorrect'/>
+            </Route>
         )
     }
 
@@ -34,7 +35,7 @@ const CountryDetails = (props) => {
             <div id='countryDetailsContainer'>
                 <div id='buttonContainerDetail'>
 
-                    <Link to='/home'><button id='goBackButton' type='button'>Go Back</button></Link>
+                    <Link to='/home'><button id='goBackButton' type='button'>Go Home</button></Link>
 
                 </div>
 

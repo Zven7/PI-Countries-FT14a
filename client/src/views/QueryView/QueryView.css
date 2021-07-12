@@ -1,9 +1,13 @@
 #errorMsgQuery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#goBackButton a{
-    color: white;
+#goBackButton a {
+  color: white;
+}
+
+#queryContainer {
+  margin-bottom: 20px;
 }

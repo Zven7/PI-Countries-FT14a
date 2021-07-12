@@ -13,7 +13,6 @@ export default function NavBar() {
             <div id='filterWrapper'>
                 <SortAlpha />
                 <FilterBy />
-                <SortPopulation />
             </div>
             <SearchBar />
             <CreateAct />

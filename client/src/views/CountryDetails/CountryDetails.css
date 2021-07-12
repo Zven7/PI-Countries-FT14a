@@ -10,16 +10,16 @@
 
 #detailedCountry {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   height: 100%;
   width: 100%;
   text-align: left;
   border-radius: 8px;
   color: black;
-  padding: 20px;
+  padding: 20px 0px 20px 0px;
   /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
-  margin: 20px;
+  margin: 20px 0px 20px 0px;
 }
 
 #goBackButton {

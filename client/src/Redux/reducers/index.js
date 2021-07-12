@@ -1,11 +1,13 @@
-import { GET_ONE_COUNTRY, GET_ALL_COUNTRIES, CREATE_ACTIVITY, GET_COUNTRY_QUERY } from '../constants';
+import { GET_ONE_COUNTRY, GET_ALL_COUNTRIES, CREATE_ACTIVITY, GET_COUNTRY_QUERY, GET_FILTER_TYPE, GET_ORDER_PARAM } from '../constants';
 import axios from 'axios';
 
 const initialState = {
     activitiesList: [],
     countryList: [],
     queryCountryList: [],
-    singleCountry: {}
+    singleCountry: {},
+    filterSelection: 'All',
+    orderSelection: 'ASC'
 }
 
 
@@ -35,6 +37,18 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 activitiesList: payload
+            }
+        case GET_FILTER_TYPE:
+            console.log('FILTER PAYLOAD -->', payload);
+            return {
+                ...state, 
+                filterSelection: payload
+            }
+        case GET_ORDER_PARAM:
+            console.log('ORDER PAYLOAD -->', payload);
+            return {
+                ...state, 
+                orderSelection: payload
             }
         default:
             return state;

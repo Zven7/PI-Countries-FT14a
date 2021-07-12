@@ -33,7 +33,6 @@ Obtener un listado de los primeros 10 países */
 
 router.use('/countries', async (req, res, next) => {
 
-    let ctDb = null;
     /* try {
         axios.get('https://restcountries.eu/rest/v2/all')
             .then(async r => {
@@ -72,7 +71,7 @@ router.use('/countries', async (req, res, next) => {
     try {
         if (req.query.name) {
             console.log('QUERY')
-            const { name, order } = req.query;
+            const { name } = req.query;
 
 
             const queryResult = await Country.findAll({
@@ -89,43 +88,13 @@ router.use('/countries', async (req, res, next) => {
                 return res.send('Country not found, try again.');
             }
         } else {
-            const { order } = req.query;
-            if(order === 'ASC' || !order){
-                ctDb = await Country.findAll({
-                    include: [{
-                        model: Activity,
-                    }],
-                    order: [['name','ASC']]
-                });
-                console.log('QUERY', order)
-            }
-            else if(order === 'DESC'){
-                console.log('QUERY', order)
-                ctDb = await Country.findAll({
-                    include: [{
-                        model: Activity,
-                    }],
-                    order: [['name','DESC']]
-                });
-            }
-            else if(order === 'ASCPOP'){
-                console.log('QUERY', order)
-                ctDb = await Country.findAll({
-                    include: [{
-                        model: Activity,
-                    }],
-                    order: [['population','ASC']]
-                });
-            }
-            else if(order === 'DESCPOP'){
-                console.log('QUERY', order)
-                ctDb = await Country.findAll({
-                    include: [{
-                        model: Activity,
-                    }],
-                    order: [['population','DESC']]
-                });
-            }
+            const ctDb = await Country.findAll({
+                /* limit: 20, */
+                include: [{
+                    model: Activity,
+                }],
+                order: [['name','ASC']]
+            });
             try {
                 console.log('CT-DB is Live!')
                 return res.json(ctDb);
@@ -138,6 +107,13 @@ router.use('/countries', async (req, res, next) => {
         console.log(err);
     }
 });
+/*  GET /countries?name="...":
+Obtener los países que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser una matcheo exacto)
+Si no existe ningún país mostrar un mensaje adecuado */
+
+/*  POST /activity:
+Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
+Crea una actividad turística en la base de datos */
 
 
 router.post('/activity', async (req, res, next) => {

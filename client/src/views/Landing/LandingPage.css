@@ -1,10 +1,9 @@
 #landingPageBody {
-  width: 200vh;
-  height: 100vh;
   background-image: url("https://www.wallgroup.com/media/catalog/product/cache/ce339dd56671d6bccbcac0916ee6b376/a/d/adobestock_318199866-small.jpg");
   background-repeat: no-repeat;
   background-position: initial;
   background-size: cover;
+  object-fit: contain;
   z-index: 1;
   overflow: hidden;
 }
