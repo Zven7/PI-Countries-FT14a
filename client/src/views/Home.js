@@ -1,8 +1,8 @@
-import { getAllCountries } from '../Redux/actions';
 import React, { useState, useEffect } from 'react';
+import { getAllCountries } from '../Redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import Pagination from './Pagination';
-import Cts from './Cts';
+import Pagination from '../Components/Pagination/Pagination';
+import Cts from '../Components/Cts';
 import './Home.css';
 
 export default function Home() {
@@ -21,9 +21,8 @@ export default function Home() {
 
     
     useEffect(() => {
-        console.log('Charging Countries')
         dispatch(getAllCountries())
-    }, [])
+    }, [dispatch])
 
     let cts1 = []
 

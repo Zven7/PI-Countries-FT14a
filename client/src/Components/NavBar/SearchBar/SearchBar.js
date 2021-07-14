@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react';
 import { getCountryQuery } from '../../../Redux/actions'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import './SearchBar.css'
 
+
 export default function SearchBar() {
     const dispatch = useDispatch();
-    const countriesFromDb = useSelector(state => state.queryCountryList)
+    //const countriesFromDb = useSelector(state => state.queryCountryList)
 
     const [input, setInput] = useState({
         word: ''
@@ -21,9 +22,7 @@ export default function SearchBar() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         dispatch(getCountryQuery(input.word))
-        
         setInput({
             word: ''
         })

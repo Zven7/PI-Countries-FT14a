@@ -1,26 +1,22 @@
-import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from "react";
-import { Route, useParams, Redirect } from "react-router-dom";
 import { getOneCountry } from "../../Redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Route, useParams, Redirect } from "react-router-dom";
+import { FaLongArrowAltDown } from 'react-icons/fa';
 import ActivityCard from "./ActivityCard";
-import CreateAct from '../../Components/NavBar/CreateAct/CreateAct'
-import { FaLongArrowAltDown } from 'react-icons/fa'
-import './CountryDetails.css'
-import { Link } from "react-router-dom";
-import IncorrectPage from "../IncorrectPage/IncorrectPage";
+import CreateAct from '../../Components/NavBar/CreateAct/CreateAct';
+import './CountryDetails.css';
 
-const CountryDetails = (props) => {
+
+const CountryDetails = () => {
     const dispatch = useDispatch();
     const ctDet = useSelector(state => state.singleCountry)
     let { id } = useParams();
 
     useEffect(() => {
-        console.log('Getting Details!');
-
         dispatch(getOneCountry(id))
-    }, [])
+    }, [dispatch, id])
 
-    console.log(ctDet)
 
     if(ctDet === null){
         return (
@@ -34,16 +30,13 @@ const CountryDetails = (props) => {
         <React.Fragment>
             <div id='countryDetailsContainer'>
                 <div id='buttonContainerDetail'>
-
                     <Link to='/home'><button id='goBackButton' type='button'>Go Home</button></Link>
-
                 </div>
-
 
                 <div id='detailedCountry'>
                     <div id='imgContainer'><img src={ctDet.image} alt={`Flag of ${ctDet.name}`} /></div>
                     <div>
-                        <h1><a href={`https://en.wikipedia.org/wiki/${ctDet.name}`}>{ctDet.name} ({ctDet.id})</a></h1>
+                        <h1><a rel='noreferrer noopener' href={`https://en.wikipedia.org/wiki/${ctDet.name}`} target='_blank'>{ctDet.name} ({ctDet.id})</a></h1>
                         <h2>Capital: {ctDet.capital}</h2>
                         <h3>Continent: {ctDet.continent}</h3>
                         <h3>Subregion: {ctDet.subregion}</h3>
@@ -58,6 +51,7 @@ const CountryDetails = (props) => {
                     {ctDet.activities && ctDet.activities.length > 0
                         ? ctDet.activities.map(act => {
                             return <ActivityCard
+                                key={act.id}
                                 name={act.name}
                                 difficulty={act.difficulty}
                                 season={act.season}

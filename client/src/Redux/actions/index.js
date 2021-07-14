@@ -7,7 +7,6 @@ export const getAllCountries = () => {
         axios.get(`http://localhost:3001/countries`)
             .then(r => r.data)
             .then(data => {
-                console.log(data);
                 dispatch({ type: GET_ALL_COUNTRIES, payload: data })
             })
     }
@@ -18,7 +17,6 @@ export const getCountryQuery = (name) => {
         axios.get(`http://localhost:3001/countries?name=${name}`)
             .then(r => r.data)
             .then(data => {
-                console.log(data);
                 dispatch({ type: GET_COUNTRY_QUERY, payload: data })
             })
     }
@@ -29,7 +27,6 @@ export const getOneCountry = (id) => {
         axios.get(`http://localhost:3001/countries/${id}`)
             .then(r => r.data)
             .then(data => {
-                console.log(data);
                 dispatch({ type: GET_ONE_COUNTRY, payload: data })
             })
     }
@@ -43,24 +40,15 @@ export const postActivity = (payload) => {
 
 export const getFilterType = (filterType) => {
     return (dispatch) => {
-            console.log(filterType, 'ACTION');
             dispatch({ type: GET_FILTER_TYPE, payload: filterType })
     }  
 }
-
-/* export const getOrderParam = (orderParam) => {
-    return (dispatch) => {
-            console.log(orderParam, 'ORDER ACTION');
-            dispatch({ type: GET_ORDER_PARAM, payload: orderParam })
-    }  
-} */
 
 export const getOrderParam = (orderParam) => {
     return (dispatch) => {
         axios.get(`http://localhost:3001/countries?order=${orderParam}`)
         .then(r => r.data)
         .then(data => {
-            console.log(data);
             dispatch({ type: GET_ALL_COUNTRIES, payload: data })
         })
         dispatch({ type: GET_ORDER_PARAM, payload: orderParam })

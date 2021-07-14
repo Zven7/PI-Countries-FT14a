@@ -2,9 +2,7 @@ import '';
 
 
 const MultSelect = () => {
-
     const countryList = useSelector(state => state.countryList)
-
 
     return (
         <select name="countryId" id="countries" multiple>
@@ -13,7 +11,6 @@ const MultSelect = () => {
             })}
         </select>
     )
-
 }
 
 export default MultSelect;

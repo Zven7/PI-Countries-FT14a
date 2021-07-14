@@ -1,21 +1,19 @@
-import './ButtonFO.css';
-import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { getFilterType } from '../../../Redux/actions/index'
+import { useDispatch } from 'react-redux';
+import './ButtonFO.css';
+
 
 export default function FilterBy() {
-
     const dispatch = useDispatch();
-    const countryList = useSelector(state => state.countryList)
+    //const countryList = useSelector(state => state.countryList)
     const [filterType, setFilterType] = useState('All')
 
-
     useEffect(() => {
-        
-        console.log(filterType, countryList)
         dispatch(getFilterType(filterType))
-    }, [filterType])
+    }, [filterType, dispatch])
 
+    
     return (
         <div id="Filter">
             <select name="filterBy" onChange={(e) => {

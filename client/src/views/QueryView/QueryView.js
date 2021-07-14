@@ -1,12 +1,12 @@
-import { getCountryQuery } from '../../Redux/actions'
-import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import CountryCard from '../../Components/CountryCard/CountryCard';
+import React, { useState, useEffect } from 'react';
+import { getCountryQuery } from '../../Redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import CountryCard from '../../Components/CountryCard/CountryCard';
+import Pagination from '../../Components/Pagination/Pagination';
 import './QueryView.css';
-import Pagination from '../Pagination';
 
-export default function QueryView(props) {
+export default function QueryView() {
     const dispatch = useDispatch();
     const countriesFromDb = useSelector(state => state.queryCountryList);
     const [cts, setCts] = useState([]);
@@ -16,18 +16,14 @@ export default function QueryView(props) {
     let { queryParam } = useParams();
 
     useEffect(() => {
-        console.log('Charging Countries')
         dispatch(getCountryQuery(queryParam))
-    }, [])
+    }, [dispatch, queryParam])
 
     useEffect(() => {
         setCts(countriesFromDb);
     }, [countriesFromDb])
 
-    console.log(queryParam)
-    console.log(countriesFromDb, 'THIS IS THE QUERY STATE')
-
-        //Pagination
+    //Pagination
     const paginate = (pageNumber, e) => {
         e.preventDefault();
         setCurrentCt(pageNumber);
@@ -36,6 +32,7 @@ export default function QueryView(props) {
     const indexOfLastCt = currentCt * ctsPerPage;
     const indexOfFirstCt = indexOfLastCt - ctsPerPage;
     const currentCts = cts.slice(indexOfFirstCt, indexOfLastCt);
+
 
     return (
         <div id='queryContainer'>
@@ -56,6 +53,5 @@ export default function QueryView(props) {
                     <Link to='/home'><button id='goBackButton'>Go Home</button></Link>
                 </div>}
         </div>
-
     )
 }

@@ -1,20 +1,19 @@
-import './ButtonFO.css';
-import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { getOrderParam } from '../../../Redux/actions/index'
+import { getOrderParam } from '../../../Redux/actions/index';
+import { useDispatch } from 'react-redux';
+import './ButtonFO.css';
 
 
 export default function SortAlpha() {
     const dispatch = useDispatch();
-    const countryList = useSelector(state => state.countryList)
+    //const countryList = useSelector(state => state.countryList)
     const [orderParam, setOrderParam] = useState('ASC')
 
 
     useEffect(() => {
-        
-        console.log(orderParam, countryList)
         dispatch(getOrderParam(orderParam))
-    }, [orderParam])
+    }, [orderParam, dispatch])
+
 
     return (
         <div id="Order">

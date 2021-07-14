@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { getAllCountries, postActivity } from "../../Redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 import './ActForm.css';
 
 const ActForm = (props) => {
     const dispatch = useDispatch();
-    const actList = useSelector(state => state.activitiesList);
+    //const actList = useSelector(state => state.activitiesList);
     const countryList = useSelector(state => state.countryList);
 
     const [input, setInput] = useState({
@@ -17,15 +16,16 @@ const ActForm = (props) => {
         countryId: []
     });
 
+
     useEffect(() => {
         dispatch(getAllCountries());
-    }, [])
+    }, [dispatch])
+
 
     const [errors, setErrors] = useState({});
 
 
     function validate(input) {
-
         if (!input.name) {
             errors.name = 'You have to put a name for the activity'
         }
@@ -60,10 +60,7 @@ const ActForm = (props) => {
             setErrors({});
             return
         }
-
-
         dispatch(postActivity(input));
-        console.log(input);
         alert('Activity Created');
     }
 
@@ -73,20 +70,16 @@ const ActForm = (props) => {
             ...input,
             [e.target.name]: e.target.value
         };
-
         setErrors(validate(newInput));
         setInput(newInput);
     }
 
     function handleSelectChange(e) {
         let selectedItems = Array.from(e.target.selectedOptions, opt => opt.value);
-
-
         const newInput = {
             ...input,
             countryId: selectedItems
         };
-
         setErrors(validate(newInput));
         setInput(newInput);
     }
@@ -97,7 +90,6 @@ const ActForm = (props) => {
             <div id='actFormWrapper'>
                 <div id='formH1'><h1>Create Activity</h1></div>
                 <form onSubmit={(e) => handleSubmit(e)}>
-
                     <div className='divForInputs'>
                         <div>Name: </div>
                         <input
@@ -123,8 +115,6 @@ const ActForm = (props) => {
 
                     <div className='divForInputs'>
                         <div>Set Difficulty: </div>
-
-
                         <input
                             id=''
                             type="range"
@@ -134,11 +124,7 @@ const ActForm = (props) => {
                             onChange={handleChange}
                             list='tickmarks'
                         />
-
-
                     </div>
-
-
 
                     <div className='divForInputs'>
                         <label htmlFor="season">Select Season:

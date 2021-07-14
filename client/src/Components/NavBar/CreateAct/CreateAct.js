@@ -1,5 +1,6 @@
-import './CreateAct.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import './CreateAct.css';
+
 
 export default function CreateAct() {
     return (

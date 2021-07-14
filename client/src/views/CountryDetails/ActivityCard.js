@@ -18,7 +18,11 @@ const ActivityCard = (props) => {
         case '5':
             difficulty = 'Very Hard';
             break;
+        default:
+            difficulty = 'Not Set'
+            break;
     }
+
 
     return (
         <div className='activityCardWrapper'>
@@ -30,6 +34,5 @@ const ActivityCard = (props) => {
         </div>
     )
 }
-
 
 export default ActivityCard;

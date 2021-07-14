@@ -69,6 +69,8 @@ h1 a:hover {
 #activitiesList {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   padding: 100px;
 }
 

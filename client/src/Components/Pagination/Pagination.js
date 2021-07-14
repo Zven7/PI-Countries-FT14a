@@ -11,7 +11,7 @@ function Pagination({ ctsPerPage, totalCts, paginate }) {
     return (
         <div id='paginationDiv'>
                 {pageNumbers.map(num => (
-                        <a href="/home" key={num} onClick={(e) => paginate(num, e)}>
+                        <a href="/home" key={num} className = 'PaginationLinkButton' onClick={(e) => paginate(num, e)}>
                             <h5 >{num}</h5>
                         </a>
                 ))}

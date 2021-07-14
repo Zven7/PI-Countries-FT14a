@@ -2,6 +2,7 @@ import React from 'react';
 import { AiFillGithub, AiOutlineMail } from 'react-icons/ai';
 import { SiLinkedin } from 'react-icons/si';
 
+
 function Footer() {
     return (
         <div id='footerDiv'>

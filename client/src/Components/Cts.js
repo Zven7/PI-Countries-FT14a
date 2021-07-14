@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import CountryCard from '../Components/CountryCard/CountryCard';
 import { Link } from 'react-router-dom';
+
 
 function Cts({cts}) {
     return (
@@ -13,4 +14,4 @@ function Cts({cts}) {
     )
 }
 
-export default Cts
+export default Cts;

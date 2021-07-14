@@ -6,17 +6,31 @@ describe('Country model', () => {
     .catch((err) => {
       console.error('Unable to connect to the database:', err);
     }));
-  describe('Validators', () => {
-    beforeEach(() => Country.sync({ force: true }));
+  describe('CT Models Test', () => {
+    /* beforeEach(() => Country.sync({ force: true })); */
     describe('name', () => {
-      it('should throw an error if name is null', (done) => {
-        Country.create({})
-          .then(() => done(new Error('It requires a valid name')))
-          .catch(() => done());
-      });
-      it('should work when its a valid name', () => {
-        Country.create({ name: 'Argentina' });
-      });
+      it('should return Argentina', () => {
+        Country.findOne({ 
+          where: {
+            name: 'Argentina'
+          }
+        })
+        .then(country => {
+          console.log('CT DB Test')
+          expect(country.name).to.equal('Argentina');
+        })
+      })
+      it('should return England', () => {
+        Country.findOne({ 
+          where: {
+            id: 'ENG'
+          }
+        })
+        .then(country => {
+          console.log('CT DB Test')
+          expect(country.name).to.equal('England');
+        })
+      })
     });
   });
 });

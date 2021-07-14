@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './Header.css';
 
-const Header = (props) => {
 
+const Header = () => {
     return (
         <div id='headerContainer'>
             <h1 id='headerText'><NavLink to='/home'>CountryApp</NavLink></h1>

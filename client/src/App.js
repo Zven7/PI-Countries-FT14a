@@ -3,14 +3,17 @@ import Header from './Components/Header/Header';
 import Home from './views/Home';
 import QueryView from './views/QueryView/QueryView'
 import CountryDetails from './views/CountryDetails/CountryDetails';
-import { Route, Switch } from 'react-router-dom';
 import ActForm from './views/ActForm/ActForm';
 import LandingPage from './views/Landing/LandingPage';
-import Footer from './views/Footer';
+import Footer from './Components/Footer';
 import IncorrectPage from './views/IncorrectPage/IncorrectPage';
+import { Route, Switch } from 'react-router-dom';
+//import { useDispatch } from 'react-redux';
 import './App.css';
 
 function App() {
+  //const dispatch= useDispatch();
+
   return (
     <div className="App">
       {/* <Switch>
