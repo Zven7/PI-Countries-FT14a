@@ -7,12 +7,12 @@
 
 ## Made with
 
--React 
--Redux 
--Node
--Express
--PostgreSQL 
--Sequelize.
+  - React 
+  - Redux 
+  - Node
+  - Express
+  - PostgreSQL 
+  - Sequelize
 
 
 ## Functions
