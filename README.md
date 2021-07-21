@@ -19,7 +19,7 @@
   - Sequelize
 
 ## DEMO Video
-  ![VIDEO LINK](https://www.youtube.com/watch?v=_QFtDQjvFFw)
+  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)]((https://www.youtube.com/watch?v=_QFtDQjvFFw))
 
 ## Functions
 
