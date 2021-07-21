@@ -29,10 +29,10 @@ Using the external [restcountries](https://restcountries.eu/) API we can:
 
 
 ## Landing Page
-Normal Ver
+#### Normal Ver
 ![Landing 1](https://user-images.githubusercontent.com/61483823/126420145-09fdd1ec-b376-48c6-84cd-fa5384da2f5c.PNG)
 
-Responsive Ver
+#### Responsive Ver
 ![Landing res](https://user-images.githubusercontent.com/61483823/126420146-c44d034e-e978-40ef-a5eb-57d5723d67fb.PNG)
 
 ## Home
