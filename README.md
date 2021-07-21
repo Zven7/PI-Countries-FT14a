@@ -19,7 +19,7 @@
   - Sequelize
 
 ## DEMO Video
-  <a align='center' href'https://www.youtube.com/watch?v=_QFtDQjvFFw' >LINK TO VIDEO</a>
+  ![VIDEO LINK](https://www.youtube.com/watch?v=_QFtDQjvFFw)
 
 ## Functions
 
