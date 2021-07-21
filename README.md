@@ -48,15 +48,15 @@ Using the external [restcountries](https://restcountries.eu/) API we can:
 
 ## Country Details 
 #### Normal Ver
-#####1
+##### 1
 ![Ct Det 1](https://user-images.githubusercontent.com/61483823/126419878-24824290-fab4-4610-bdcf-8fe51ea2aa49.PNG)
-#####2
+##### 2
 ![Ct Det 2](https://user-images.githubusercontent.com/61483823/126419879-d1e1c1d2-b543-4b27-97d5-98c988069f5d.PNG)
 
 #### Responsive Ver
-#####1
+##### 1
 ![Det res 1](https://user-images.githubusercontent.com/61483823/126419881-6239e64d-4e8e-4105-91c2-633016b5a2d5.PNG)
-#####2
+##### 2
 ![det res 2](https://user-images.githubusercontent.com/61483823/126419883-02593173-57ba-45a0-8ff2-9cbb35ba951e.PNG)
 
 
