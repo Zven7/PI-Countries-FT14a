@@ -37,9 +37,9 @@ Using the external [restcountries](https://restcountries.eu/) API we can:
 
 ## Home
 #### Normal Ver
-##### 1
+##### ============================================================================================================
 ![Home 1](https://user-images.githubusercontent.com/61483823/126419886-be2b0291-b678-4ffd-b0e7-e25d899d4792.PNG)
-##### 2
+##### ============================================================================================================
 ![Home 2](https://user-images.githubusercontent.com/61483823/126419887-cd1813ac-ce11-4931-9df2-b9c0e0766885.PNG)
 
 #### Responsive Ver
