@@ -18,6 +18,8 @@
   - PostgreSQL 
   - Sequelize
 
+## DEMO Video
+  <a align='center' href'https://www.youtube.com/watch?v=_QFtDQjvFFw' >LINK TO VIDEO</a>
 
 ## Functions
 
