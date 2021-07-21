@@ -1,7 +1,7 @@
 # Country App
 
 <p align="left">
-  <img height="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/World_map_%28Miller_cylindrical_projection%2C_blank%29.svg/1200px-World_map_%28Miller_cylindrical_projection%2C_blank%29.svg.png" />
+  <img height="200" src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/25900.png" />
 </p>
 
 
